@@ -150,21 +150,31 @@ describe('Collections', function () {
 
 describe('Functions', function () {
 
+  var called;
+
+  beforeEach(function () {
+    called = 0;
+  });
+
   describe('bind', function () {
 
     it('should bind a function to an object', function () {
       var bound = _.bind(function () {
+        called++;
         this.should.equal(mocks.obj);
       }, mocks.obj);
       bound();
+      called.should.equal(1);
     });
 
     it('should correctly pass the arguments', function () {
       var bound = _.bind(function () {
+        called++;
         arguments[0].should.equal(mocks.arr);
         arguments[1].should.equal(mocks.obj);
       });
       bound(mocks.arr, mocks.obj);
+      called.should.equal(1);
     });
 
   });
@@ -172,7 +182,6 @@ describe('Functions', function () {
   describe('memoize', function () {
 
     it('should cache already computed results', function () {
-      var called = 0;
       var memoized = _.memoize(function (string) {
         called ++;
         return mocks.reverseString(string);
@@ -183,7 +192,6 @@ describe('Functions', function () {
     });
 
     it('should recompute when called with different arguments', function () {
-      var called = 0;
       var memoized = _.memoize(function (string) {
         called ++;
         return mocks.reverseString(string);
