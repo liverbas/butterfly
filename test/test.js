@@ -214,9 +214,11 @@ describe('Classes', function () {
 
   it('an instance should have access to the class methods', function () {
     _.underCollections.hasOwnProperty('each').should.be.false;
+    _.underCollections.__proto__.hasOwnProperty('each').should.be.true;
     _.underCollections.each.should.equal(_.each);
     _.underCollections.hasOwnProperty('reduce').should.be.false;
     _.underCollections.reduce.should.equal(_.reduce);
+    _.underCollections.__proto__.hasOwnProperty('reduce').should.be.true;
   });
 
   it('a sub-class instance should have the class and sub-class properties', function () {
@@ -226,13 +228,22 @@ describe('Classes', function () {
 
   it('a sub-class instance should have access to the class and sub-class methods', function () {
     _.underCollections.hasOwnProperty('each').should.be.false;
+    _.underCollections.__proto__.hasOwnProperty('each').should.be.true;
     _.underFunctions.each.should.equal(_.each);
     _.underCollections.hasOwnProperty('reduce').should.be.false;
+    _.underCollections.__proto__.hasOwnProperty('reduce').should.be.true;
     _.underFunctions.reduce.should.equal(_.reduce);
     _.underCollections.hasOwnProperty('bind').should.be.false;
+    _.underFunctions.__proto__.hasOwnProperty('bind').should.be.true;
     _.underFunctions.bind.should.equal(_.bind);
     _.underCollections.hasOwnProperty('memoize').should.be.false;
+    _.underFunctions.__proto__.hasOwnProperty('memoize').should.be.true;
     _.underFunctions.memoize.should.equal(_.memoize);
+    _.underCollections.__proto__.hasOwnProperty('bind').should.be.false;
+    _.underCollections.__proto__.hasOwnProperty('memoize').should.be.false;
+    _.underFunctions.__proto__.hasOwnProperty('each').should.be.false;
+    _.underFunctions.__proto__.hasOwnProperty('reduce').should.be.false;
+    _.underFunctions.__proto__.hasOwnProperty('libraryDesc').should.be.false;
   });
 
 });
