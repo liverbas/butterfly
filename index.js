@@ -33,8 +33,8 @@ _.reduce = function (collection, iteratee, accumulator, context) {
 };
 
 // _.bind(function, object)
-// Binds a function to an object, meaning that whenever the function is called,
-// the value of "this" will be the object. Returns the bound function.
+// Binds a function to an object (obviously without using `bind`), meaning that whenever
+// the function is called, the value of "this" will be the object. Returns the bound function.
 _.bind = function (func, obj) {
 
 };
