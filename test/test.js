@@ -177,6 +177,15 @@ describe('Functions', function () {
       called.should.equal(1);
     });
 
+    it('should return the result of calling the input function', function () {
+      var bound = _.bind(function () {
+        called++;
+        return true;
+      });
+      bound().should.equal(true);
+      called.should.equal(1);
+    });
+
   });
 
   describe('memoize', function () {
