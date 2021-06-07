@@ -27,6 +27,7 @@
     "semi": "error",
     "space-before-blocks": "error",
     "space-before-function-paren": "error",
+    "no-prototype-builtins": 0,
     "no-undef": "off",
     "no-unused-vars": "off"
   }

@@ -39,7 +39,7 @@ describe('Collections', function () {
     it('should ignore the object prototype', function () {
       mocks.obj.constructor.prototype.foo = 'foo';
       _.each(mocks.obj, function (val, key, obj) {
-        obj.hasOwnProperty(key).should.be.true;
+        Object.prototype.hasOwnProperty.call(obj, key).should.be.true;
         called = true;
       });
       called.should.be.true;
@@ -74,8 +74,8 @@ describe('Collections', function () {
     });
 
     it('should return the collection', function () {
-      _.each(mocks.arr, function () {}).should.equal(mocks.arr);
-      _.each(mocks.obj, function () {}).should.equal(mocks.obj);
+      _.each(mocks.arr, function () { }).should.equal(mocks.arr);
+      _.each(mocks.obj, function () { }).should.equal(mocks.obj);
     });
 
   });
@@ -109,7 +109,7 @@ describe('Collections', function () {
     it('should ignore the object prototype', function () {
       mocks.obj.constructor.prototype.foo = 'foo';
       _.reduce(mocks.obj, function (accumulator, val, key, obj) {
-        obj.hasOwnProperty(key).should.be.true;
+        Object.prototype.hasOwnProperty.call(obj, key).should.be.true;
         called = true;
         return accumulator;
       });
@@ -192,7 +192,7 @@ describe('Functions', function () {
 
     it('should cache already computed results', function () {
       var memoized = _.memoize(function (string) {
-        called ++;
+        called++;
         return mocks.reverseString(string);
       });
       memoized(mocks.string).should.equal(mocks.reversedString);
@@ -202,7 +202,7 @@ describe('Functions', function () {
 
     it('should recompute when called with different arguments', function () {
       var memoized = _.memoize(function (string) {
-        called ++;
+        called++;
         return mocks.reverseString(string);
       });
       memoized(mocks.string).should.equal(mocks.reversedString);
@@ -217,42 +217,42 @@ describe('Functions', function () {
 describe('Classes', function () {
 
   it('an instance should have the class properties', function () {
-    _.underCollections.hasOwnProperty('libraryDesc').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'libraryDesc').should.be.true;
     _.underCollections.libraryDesc.should.equal('collections');
   });
 
   it('an instance should have access to the class methods', function () {
-    _.underCollections.hasOwnProperty('each').should.be.false;
-    _.underCollections.__proto__.hasOwnProperty('each').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'each').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'each').should.be.true;
     _.underCollections.each.should.equal(_.each);
-    _.underCollections.hasOwnProperty('reduce').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'reduce').should.be.false;
     _.underCollections.reduce.should.equal(_.reduce);
-    _.underCollections.__proto__.hasOwnProperty('reduce').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'reduce').should.be.true;
   });
 
   it('a sub-class instance should have the class and sub-class properties', function () {
-    _.underFunctions.hasOwnProperty('libraryDesc').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underFunctions, 'libraryDesc').should.be.true;
     _.underFunctions.libraryDesc.should.equal('functions');
   });
 
   it('a sub-class instance should have access to the class and sub-class methods', function () {
-    _.underCollections.hasOwnProperty('each').should.be.false;
-    _.underCollections.__proto__.hasOwnProperty('each').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'each').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'each').should.be.true;
     _.underFunctions.each.should.equal(_.each);
-    _.underCollections.hasOwnProperty('reduce').should.be.false;
-    _.underCollections.__proto__.hasOwnProperty('reduce').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'reduce').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'reduce').should.be.true;
     _.underFunctions.reduce.should.equal(_.reduce);
-    _.underCollections.hasOwnProperty('bind').should.be.false;
-    _.underFunctions.__proto__.hasOwnProperty('bind').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'bind').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underFunctions.__proto__, 'bind').should.be.true;
     _.underFunctions.bind.should.equal(_.bind);
-    _.underCollections.hasOwnProperty('memoize').should.be.false;
-    _.underFunctions.__proto__.hasOwnProperty('memoize').should.be.true;
+    Object.prototype.hasOwnProperty.call(_.underCollections, 'memoize').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underFunctions.__proto__, 'memoize').should.be.true;
     _.underFunctions.memoize.should.equal(_.memoize);
-    _.underCollections.__proto__.hasOwnProperty('bind').should.be.false;
-    _.underCollections.__proto__.hasOwnProperty('memoize').should.be.false;
-    _.underFunctions.__proto__.hasOwnProperty('each').should.be.false;
-    _.underFunctions.__proto__.hasOwnProperty('reduce').should.be.false;
-    _.underFunctions.__proto__.hasOwnProperty('libraryDesc').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'bind').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underCollections.__proto__, 'memoize').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underFunctions.__proto__, 'each').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underFunctions.__proto__, 'reduce').should.be.false;
+    Object.prototype.hasOwnProperty.call(_.underFunctions.__proto__, 'libraryDesc').should.be.false;
   });
 
 });
