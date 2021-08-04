@@ -25,4 +25,4 @@ You can use Markdown syntax (e.g. to include code snippets).
 ### Can you explain what is the delegation chain?
 
 
-### Can you mention some new features coming in ES6?
+### Can you mention some features added in ES6?
