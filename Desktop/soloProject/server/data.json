@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "British Red Cross",
+    "theme": "charity",
+    "website": "https://www.redcross.org.uk/",
+    "img": "https://www.michaeltomlinson.org.uk/sites/www.michaeltomlinson.org.uk/files/british-red-cross.jpg",
+    "social media": {
+      "facebook": "https://www.facebook.com/BritishRedCross/",
+      "twitter": "https://twitter.com/BritishRedCross?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+    },
+    "funding": "https://donate.redcross.org.uk/appeal/kindness-has-no-borders?utm_campaign=Kindness%20Has%20No%20Borders&utm_source=Twitter&utm_medium=Social%20Post&utm_content=Donate%20Landing_Twitter_Organic_Kindness&utm_term=175155_BRC%20Followers&c_name=Kindness%20Has%20No%20Borders&c_source=Twitter&c_medium=Social%20Post&c_creative=Donate%20Landing_Twitter_Organic_Kindness&c_code=175155&adg=BRC%20Followers"
+  },
+  {
+    "id": "2",
+    "name": "Sea Sheperd",
+    "theme": "Environment",
+    "website": "https://www.seashepherd.org.uk/",
+    "img": "https://mycauseuk.com/wp-content/uploads/2018/04/Sea-Shepherd-UK-Logo.png",
+    "social media": {
+      "facebook": "https://www.facebook.com/SeaShepherdUK/",
+      "twitter": "https://twitter.com/seashepherd_uk"
+    },
+    "funding": "https://seashepherduktrading.org/products/tip?gclid=Cj0KCQiAuP-OBhDqARIsAD4XHpc8JIAt1P4cjgXdUYkMSv2Hs65QSfWEPtwdRVjqAIgXXSJS7XHBi38aAsKNEALw_wcB"
+  },
+  {
+    "id": "3",
+    "name": "PETA",
+    "theme": "Animal rights",
+    "website": "http://peta.org.uk/",
+    "img": "https://www.peta.org.uk/wp-content/themes/peta-uk/img/petauk-logo.svg",
+    "social media": {
+      "facebook": "https://www.facebook.com/OfficialPETAUK/",
+      "twitter": "https://twitter.com/PETAUK?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+    },
+    "funding": "https://secure.peta.org.uk/page/16533/donate/1?locale=en-GB"
+  }
+]
