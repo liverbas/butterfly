@@ -32,14 +32,14 @@ const RootQuery = new GraphQLObjectType({
 
     hello: {
       type: GraphQLString,
-      resolve() {
+      resolve () {
         return "hello query graphql";
       },
     },
 
     associations: {
       type: new GraphQLList(AssociationType),
-      resolve() {
+      resolve () {
         return DBModels.Association.find({});
       },
     },
@@ -72,13 +72,6 @@ const MutationQuery = new GraphQLObjectType({
   },
 });
 
-/* id:String,  
-name: String,
-theme: String,
-website: String,
-img: String,
-socialMedia: [socialMediaSchema],
-funding: String, */
 
 const schema = new GraphQLSchema({
   query: RootQuery,

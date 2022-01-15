@@ -16,7 +16,7 @@ const mongoDBClient = require("./database/db");
 
 const schema = require("./schema");
 
-//accès  à l'interface GraphQL
+//accès  à l'API GraphQL
 app.use(
   "/graphql",
   graphqlHTTP({
